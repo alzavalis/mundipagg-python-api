@@ -1,6 +1,6 @@
-class ManageOrderRequest(object):
+class ManageOrderRequest:
 
-	class OperationEnum(object):
+	class OperationEnum:
 		Capture = 'Capture'
 		Void = 'Void'
 			
@@ -14,7 +14,7 @@ class ManageOrderRequest(object):
 		self.requestKey	= '00000000-0000-0000-0000-000000000000'
 		self.operationEnum = self.OperationEnum
 
-	class ManageTransactionRequest(object):
+	class ManageTransactionRequest:
 
 		def __init__(self):
 			amountInCents = None

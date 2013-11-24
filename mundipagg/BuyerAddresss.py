@@ -1,12 +1,12 @@
-class BuyerAddress(object):
+class BuyerAddress:
 
-	class AddressTypeEnum(object):
+	class AddressTypeEnum:
 		Billing = 'Billing'
 		Shipping = 'Shipping'
 		Work = 'Comercial'
 		Home = 'Residential'
 
-	class CountryEnum(object):
+	class CountryEnum:
 		Brazil = 'Brazil'
 		UnitedStates = 'USA'
 		Argentina = 'Argentina'

@@ -1,25 +1,48 @@
 import xml.etree.ElementTree as parser
+from cStringIO import StringIO
 
-class Gateway(object):
+class Gateway:
 
-	
 	def __init__(self):
+		pass
+
+	def ManageOrder(self,request):
+				
+		self.ManageOrderXML = '''<manageOrderRequest>
+		                                    <ManageCreditCardTransactionCollection>
+		                                    </ManageCreditCardTransactionCollection>
+		                                    <ManageOrderOperationEnum>1000</ManageOrderOperationEnum>
+		                                    <MerchantKey>?</MerchantKey>
+		                                    <OrderKey>?</OrderKey>
+		                                    <OrderReference>?</OrderReference>
+		                                    <RequestKey>?</RequestKey>
+		                         </manageOrderRequest>'''
+
+		print self.ManageOrderXML
 		
-	
-	def ManageOrder(request):
-		hash = parser.fromstring('''<tns:manageOrderRequest>
-		                                    <mun:ManageCreditCardTransactionCollection>
-		                                    </mun:ManageCreditCardTransactionCollection>
-		                                    <mun:ManageOrderOperationEnum>?</mun:ManageOrderOperationEnum>
-		                                    <mun:MerchantKey>?</mun:MerchantKey>
-		                                    <mun:OrderKey>?</mun:OrderKey>
-		                                    <mun:OrderReference>?</mun:OrderReference>
-		                                    <mun:RequestKey>?</mun:RequestKey>
-		                            </tns:manageOrderRequest>''')
+		tree = parser.parse(StringIO(self.ManageOrderXML))
+		root = root.getroot()
+				
+		for element in root:
+			print element.tag, element.attrib, element.text
 
-		xml_hash = hash['<tns:manageOrderRequest']
+		root.find('ManageCreditCardTransactionCollection').text = str({'ManageCreditCardTransactionRequest' : []})
 
-		xml_hash['mun:ManageCreditCardTransactionCollection'] = {'mun:ManageCreditCardTransactionRequest' : []}
+		# if request.transactionCollection is None and request.transactionCollection.count > 0 :			
+			
+		# 	for transaction in request.transactionCollection:
+		# 		root.find('ManageCreditCardTransactionRequest') << {
+		# 			 'AmountInCents' : transaction.amountInCents, 
+		# 			 'TransactionKey' : transaction.transactionKey, 
+		# 			 'TransactionReference' : transaction.transactionReference 
+		# 		}
 
-		if request.transactionCollection is None and request.transactionCollection.count > 0 :			
-			pass
+
+		root.find('ManageOrderOperationEnum').text = request.manageOrderOperationEnum
+		root.find('MerchantKey').text = request.merchantKey
+		root.find('OrderKey').text = request.orderKey
+		root.find('OrderReference').text = request.orderReference
+		root.find('RequestKey').text = request.requestKey
+
+		for element in root:
+			print element.tag, element.attrib, element.text

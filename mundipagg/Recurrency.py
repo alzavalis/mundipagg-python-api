@@ -1,6 +1,6 @@
-class Recurrency(object):
+class Recurrency:
 
-	class Frequency(object):
+	class Frequency:
 		Monthly = 'Monthly'
 		Yearly = 'Yearly'
 		Daily = 'Daily'

@@ -1,14 +1,14 @@
-class Buyer(object):	
+class Buyer:	
 
-	class GenderEnum(object):
+	class GenderEnum:
 		Male = 'M'
 		Female = 'F'
 
-	class PersonTypeEnum(object):
+	class PersonTypeEnum:
 		Person = 'Person'
 		Company = 'Company'
 
-	class DocumentType(object):
+	class DocumentType:
 		CPF = 'CPF'
 		CNPJ = 'CNPJ'
 	

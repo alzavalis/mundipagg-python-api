@@ -1,10 +1,10 @@
-class CreateOrderRequest(object):	
+class CreateOrderRequest:	
 
-	class CurrencyIsoEnum(object):
+	class CurrencyIsoEnum:
 		BrazillianReal = 'BRL'
 		AmericanDollar = 'USD'
 
-	def __init__(self, arg):
+	def __init__(self):
 		self.amountInCents = None
 		self.amountInCentsToConsiderPaid = None
 		self.currencyIsoEnum = self.CurrencyIsoEnum.BrazillianReal

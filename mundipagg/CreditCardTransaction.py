@@ -1,6 +1,6 @@
-class CreditCardTransaction(object):
+class CreditCardTransaction:
 
-	class BrandEnum(object):
+	class BrandEnum:
 		Visa = 'Visa'
 		MasterCard = 'MasterCard'
 		AmericanExpress = 'Amex'
@@ -10,7 +10,7 @@ class CreditCardTransaction(object):
 		Aura = 'Aura'
 		Discover = 'Discover'
 
-	class OperationEnum(object):
+	class OperationEnum:
 		AuthOnly = 'AuthOnly'
 		AuthAndCapture = 'AuthAndCapture'
 		AuthAndCaptureDelay = 'AuthAndCaptureDelay'	

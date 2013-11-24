@@ -1,4 +1,4 @@
-class BoletoTransaction(object):
+class BoletoTransaction:
 
 	def __init__(self):
 		self.amountInCents = 0

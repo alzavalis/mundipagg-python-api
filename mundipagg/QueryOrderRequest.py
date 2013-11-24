@@ -1,4 +1,4 @@
-class QueryOrderRequest(object):
+class QueryOrderRequest:
 	
 	def __init__(self):
 		self.merchantKey = None
