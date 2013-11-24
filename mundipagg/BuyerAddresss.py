@@ -18,13 +18,13 @@ class BuyerAddress(object):
 		Paraguay = 'Paraguay'			
 	
 	def __init__(self):		
-		self.addressTypeEnum 	= self.AddressTypeEnum.Home
-		self.city 				= None
-		self.complement 		= None
-		self.contryEnum 		= self.CountryEnum.Brazil
-		self.district 			= None
-		self.number 			= None
-		self.state 				= None
-		self.street 			= None
-		self.zipCode			= None	
+		self.addressTypeEnum = self.AddressTypeEnum.Home
+		self.city = None
+		self.complement = None
+		self.contryEnum = self.CountryEnum.Brazil
+		self.district = None
+		self.number = None
+		self.state = None
+		self.street = None
+		self.zipCode = None	
 		

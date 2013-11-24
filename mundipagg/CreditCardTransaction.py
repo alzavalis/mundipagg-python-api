@@ -17,17 +17,17 @@ class CreditCardTransaction(object):
 
 
 	def __init__(self):
-		self.amountInCents 				= None
-		self.creditCardBrandEnum 		= None
-		self.creditCardNumber 			= None
-		self.creditCardOperationEnum 	= None
-		self.expirationMonth 			= None
-		self.expirationYear 			= None
-		self.holderName 				= None
-		self.installmentCount 			= None
-		self.securityCode 				= None
-		self.paymentMethodCode 			= None
-		self.transactionReference 		= None
-		self.recurrency 				= None			
-		self.brandEnum 					= self.BrandEnum
-		self.operationEnum 				= self.OperationEnum
+		self.amountInCents = None
+		self.creditCardBrandEnum = None
+		self.creditCardNumber = None
+		self.creditCardOperationEnum = None
+		self.expirationMonth = None
+		self.expirationYear = None
+		self.holderName = None
+		self.installmentCount = None
+		self.securityCode = None
+		self.paymentMethodCode = None
+		self.transactionReference = None
+		self.recurrency = None			
+		self.brandEnum = self.BrandEnum
+		self.operationEnum = self.OperationEnum
