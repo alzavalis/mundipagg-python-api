@@ -1,48 +1,54 @@
 import xml.etree.ElementTree as parser
 from cStringIO import StringIO
+from suds.client import Client
 
 class Gateway:
 
-	def __init__(self):
-		pass
+	WEBSERVICE_TEST_URL = None    
+	WEBSERVICE_PRODUCTION_URL = None
+
+	def __init__(self,environment="test"):
+		self.WEBSERVICE_TEST_URL = "https://transaction.mundipaggone.com/MundiPaggService.svc?wsdl"    
+		self.WEBSERVICE_PRODUCTION_URL = "https://transaction.mundipaggone.com/MundiPaggService.svc?wsdl"
+		self.environment = environment
 
 	def ManageOrder(self,request):
-				
-		self.ManageOrderXML = '''<manageOrderRequest>
-		                                    <ManageCreditCardTransactionCollection>
-		                                    </ManageCreditCardTransactionCollection>
-		                                    <ManageOrderOperationEnum>1000</ManageOrderOperationEnum>
-		                                    <MerchantKey>?</MerchantKey>
-		                                    <OrderKey>?</OrderKey>
-		                                    <OrderReference>?</OrderReference>
-		                                    <RequestKey>?</RequestKey>
-		                         </manageOrderRequest>'''
+		url = self.getUrl()
 
-		print self.ManageOrderXML
+		client = Client(url)		
+
+		ManageCreditCardTransactionRequest = []
+
+		manageOrderRequest = client.factory.create('ns0:ManageOrderRequest')	
+				
+		if request.transactionCollection is None and request.transactionCollection.count > 0 :
+
+			for transaction in request.transactionCollection:
+					ManageCreditCardTransactionRequest.append({
+						 'AmountInCents' : transaction.amountInCents, 
+						 'TransactionKey' : transaction.transactionKey,
+	 					 'TransactionReference' : transaction.transactionReference 
+					})
 		
-		tree = parser.parse(StringIO(self.ManageOrderXML))
-		root = root.getroot()
-				
-		for element in root:
-			print element.tag, element.attrib, element.text
+		manageOrderRequest.MerchantKey = request.merchantKey
+		manageOrderRequest.OrderKey = request.orderKey
+		manageOrderRequest.OrderReference = request.orderReference
+		manageOrderRequest.RequestKey = request.requestKey
 
-		root.find('ManageCreditCardTransactionCollection').text = str({'ManageCreditCardTransactionRequest' : []})
+		manageOrderRequest.ArrayOfManageCreditCardTransactionRequest = ManageCreditCardTransactionRequest
+		manageOrderRequest.ManageOrderOperationEnum.value = request.manageOrderOperationEnum.Capture
 
-		# if request.transactionCollection is None and request.transactionCollection.count > 0 :			
-			
-		# 	for transaction in request.transactionCollection:
-		# 		root.find('ManageCreditCardTransactionRequest') << {
-		# 			 'AmountInCents' : transaction.amountInCents, 
-		# 			 'TransactionKey' : transaction.transactionKey, 
-		# 			 'TransactionReference' : transaction.transactionReference 
-		# 		}
+		print manageOrderRequest
 
+		result = client.service.ManageOrder(manageOrderRequest)
+		print result
 
-		root.find('ManageOrderOperationEnum').text = request.manageOrderOperationEnum
-		root.find('MerchantKey').text = request.merchantKey
-		root.find('OrderKey').text = request.orderKey
-		root.find('OrderReference').text = request.orderReference
-		root.find('RequestKey').text = request.requestKey
+	def getUrl(self):
+		url = None	
 
-		for element in root:
-			print element.tag, element.attrib, element.text
+		if self.environment == "production":
+			url = self.WEBSERVICE_PRODUCTION_URL
+		else:
+			url = self.WEBSERVICE_TEST_URL
+
+		return url
