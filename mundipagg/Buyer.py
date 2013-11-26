@@ -26,5 +26,5 @@ class Buyer:
 		self.twitterId = None		
 		self.addressCollection = []
 		self.buyerKey = '00000000-0000-0000-0000-000000000000'
-		self.PersonTypeEnum	= self.PersonTypeEnum.Person
+		self.personTypeEnum	= self.PersonTypeEnum.Person
 		self.taxDocumentTypeEnum = self.DocumentType.CPF
