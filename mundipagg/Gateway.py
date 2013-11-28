@@ -1,14 +1,11 @@
-import xml.etree.ElementTree as parser
 from cStringIO import StringIO
 from suds.client import Client
 import logging
 
 class Gateway:
+	"""Class responsable for comunicating with the service via SOAP"""
 
-	WEBSERVICE_TEST_URL = None    
-	WEBSERVICE_PRODUCTION_URL = None
-
-	def __init__(self,environment="test"):
+	def __init__(self,environment="test"):		
 		self.WEBSERVICE_TEST_URL = "https://transaction.mundipaggone.com/MundiPaggService.svc?wsdl"    
 		self.WEBSERVICE_PRODUCTION_URL = "https://transaction.mundipaggone.com/MundiPaggService.svc?wsdl"
 		self.environment = environment 
@@ -18,6 +15,10 @@ class Gateway:
 		#logging.getLogger('suds.transport').setLevel(logging.DEBUG)
 
 	def getUrl(self):
+		"""Decides with URL to use based in the environment value
+	    
+	    :returns: URL string
+	    """
 		url = None	
 
 		if self.environment == "production":
@@ -27,7 +28,111 @@ class Gateway:
 
 		return url
 
+	def CreateBuyer(self,request):
+		"""This method creates an CreateBuyer object
+
+	    :param request: A CreateOrderRequest
+	    :returns: Buyer object    
+	    """
+		url = self.getUrl()
+
+		client = Client(url)
+
+		buyer = client.factory.create('ns0:Buyer')
+
+		buyer.BuyerKey = request.buyer.buyerKey
+		buyer.BuyerReference = request.buyer.buyerReference
+		buyer.Email = request.buyer.email
+		buyer.FacebookId = request.buyer.facebookId
+		buyer.GenderEnum = request.buyer.genderEnum
+		buyer.HomePhone = request.buyer.homePhone
+		buyer.IpAddress = request.buyer.ipAddress
+		buyer.MobilePhone = request.buyer.mobilePhone
+		buyer.Name = request.buyer.name
+		buyer.PersonTypeEnum = request.buyer.personTypeEnum
+		buyer.TaxDocumentNumber = request.buyer.taxDocumentNumber
+		buyer.TaxDocumentTypeEnum = request.buyer.taxDocumentTypeEnum
+		buyer.WorkPhone = request.buyer.workPhone
+		buyer.BuyerAddressCollection = request.buyer.buyerAddressCollection
+
+		return buyer
+
+	def CreateBoletoTransaction(self,request):
+		"""This method creates an CreateBoletoTransaction object
+
+	    :param request: A CreateOrderRequest
+	    :type request: CreateOrderRequest
+	    :returns: BoletoTransaction object    
+	    """
+		url = self.getUrl()
+
+		client = Client(url)
+
+		transactionCollection = []
+
+		boletoTransactionRequest = client.factory.create('ns0:BoletoTransaction')
+
+		for boleto in request.boletoTransactionCollection:
+			boletoTransactionRequest.AmountInCents = boleto.amountInCents
+			boletoTransactionRequest.BankNumber = boleto.bankNumber
+			boletoTransactionRequest.DaysToAddInBoletoExpirationDate = boleto.daysToAddInBoletoExpirationDate
+			boletoTransactionRequest.Instructions = boleto.instructions
+			boletoTransactionRequest.NossoNumero = boleto.nossoNumero
+			boletoTransactionRequest.TransactionReference = boleto.transactionReference
+
+			transactionCollection.append(boletoTransactionRequest)
+
+		return boletoTransactionRequest	
+
+
+	#TODO
+	# def CreateCreditCardTransaction(self,request):
+	"""This method creates an CreateCreditCardTransaction object
+
+	    :param request: A CreateOrderRequest
+	    :returns: CreateCreditCardTransaction object    
+	    """
+	# 	url = self.getUrl()
+
+	# 	client = Client(url)
+
+	# 	transactionCollection = []
+
+	# 	creditCardTransaction = client.factory.create('ns0:CreditCardTransaction')
+
+	# 	for transaction in request.creditCardTransactionCollection:
+	# 		creditCardTransaction.AmountInCents = None
+	# 		creditCardTransaction.CaptureDelayInMinutes = None
+	# 		creditCardTransaction.CreditCardBrandEnum = (CreditCardBrandEnum){value = None   }
+	# 		creditCardTransaction.CreditCardNumber = None
+	# 		creditCardTransaction.CreditCardOperationEnum =(CreditCardOperationEnum){value = None}
+	# 		creditCardTransaction.ExpMonth = None
+	# 		creditCardTransaction.ExpYear = None
+	# 		creditCardTransaction.HolderName = None
+	# 		creditCardTransaction.IataAmountInCents = None
+	# 		creditCardTransaction.InstallmentCount = None
+	# 		creditCardTransaction.InstantBuyKey = None
+	# 		creditCardTransaction.PaymentMethodCode = None
+	# 		creditCardTransaction.SecurityCode = None
+	# 		creditCardTransaction.ThirdPartyMerchantKey = None
+	# 		creditCardTransaction.TransactionReference = None
+
+	# 		creditCardTransaction.Recurrency.DateToStartBilling = transaction.recurrency.dateToStartBilling
+	# 		creditCardTransaction.Recurrency.FrequencyEnum = transaction.recurrency.frequencyEnum
+	# 		creditCardTransaction.Recurrency.Interval = transaction.recurrency.interval
+	# 		creditCardTransaction.Recurrency.OneDollarAuth = transaction.recurrency.oneDollarAuth
+	# 		creditCardTransaction.Recurrency.Recurrences = transaction.recurrency.recurrences
+
+	# 		transactionCollection.append(creditCardTransaction)
+
+	# 	return transactionCollection
+
+
 	def ManageOrder(self,request):
+		"""Calls the ManageOrder method
+
+		:param request: An CreateOrderRequest		
+		"""
 		url = self.getUrl()
 
 		client = Client(url)		
@@ -63,6 +168,10 @@ class Gateway:
 		print result
 
 	def QueryOrder(self,request):
+		"""Calls the QueryOrder method
+
+	    :param request: A QueryOrderRequest	    
+	    """
 		url = self.getUrl()
 
 		client = Client(url)
@@ -77,6 +186,10 @@ class Gateway:
 		result = client.service.QueryOrder(queryOrderRequest)
 
 	def CreateOrder(self,request):
+		"""Calls the CreateOrder method
+
+	    :param request: A CreateOrderRequest    
+	    """
 		url = self.getUrl()
 
 		client = Client(url)
@@ -108,88 +221,3 @@ class Gateway:
 			createOrderRequest.BoletoTransactionCollection = None
 
 		result = client.service.CreateOrder(createOrderRequest)
-
-	def CreateBuyer(self,request):
-		url = self.getUrl()
-
-		client = Client(url)
-
-		buyer = client.factory.create('ns0:Buyer')
-
-		buyer.BuyerKey = request.buyer.buyerKey
-		buyer.BuyerReference = request.buyer.buyerReference
-		buyer.Email = request.buyer.email
-		buyer.FacebookId = request.buyer.facebookId
-		buyer.GenderEnum = request.buyer.genderEnum
-		buyer.HomePhone = request.buyer.homePhone
-		buyer.IpAddress = request.buyer.ipAddress
-		buyer.MobilePhone = request.buyer.mobilePhone
-		buyer.Name = request.buyer.name
-		buyer.PersonTypeEnum = request.buyer.personTypeEnum
-		buyer.TaxDocumentNumber = request.buyer.taxDocumentNumber
-		buyer.TaxDocumentTypeEnum = request.buyer.taxDocumentTypeEnum
-		buyer.WorkPhone = request.buyer.workPhone
-		buyer.BuyerAddressCollection = request.buyer.buyerAddressCollection
-
-		return buyer
-
-	def CreateBoletoTransactionRequest(self,request):
-		url = self.getUrl()
-
-		client = Client(url)
-
-		transactionCollection = []
-
-		boletoTransactionRequest = client.factory.create('ns0:BoletoTransaction')
-
-		for boleto in request.boletoTransactionCollection:
-			boletoTransactionRequest.AmountInCents = boleto.amountInCents
-			boletoTransactionRequest.BankNumber = boleto.bankNumber
-			boletoTransactionRequest.DaysToAddInBoletoExpirationDate = boleto.daysToAddInBoletoExpirationDate
-			boletoTransactionRequest.Instructions = boleto.instructions
-			boletoTransactionRequest.NossoNumero = boleto.nossoNumero
-			boletoTransactionRequest.TransactionReference = boleto.transactionReference
-
-			transactionCollection.append(boletoTransactionRequest)
-
-		return boletoTransactionRequest		
-
-	#TODO
-	def CreateCreditCardTransaction(self,request):
-		url = self.getUrl()
-
-		client = Client(url)
-
-		transactionCollection = []
-
-		creditCardTransaction = client.factory.create('ns0:CreditCardTransaction')
-
-		for transaction in request.creditCardTransactionCollection:
-			creditCardTransaction.AmountInCents = None
-			creditCardTransaction.CaptureDelayInMinutes = None
-			creditCardTransaction.CreditCardBrandEnum =(CreditCardBrandEnum){value = None   }
-			creditCardTransaction.CreditCardNumber = None
-			creditCardTransaction.CreditCardOperationEnum =(CreditCardOperationEnum){value = None}
-			creditCardTransaction.ExpMonth = None
-			creditCardTransaction.ExpYear = None
-			creditCardTransaction.HolderName = None
-			creditCardTransaction.IataAmountInCents = None
-			creditCardTransaction.InstallmentCount = None
-			creditCardTransaction.InstantBuyKey = None
-			creditCardTransaction.PaymentMethodCode = None
-			creditCardTransaction.SecurityCode = None
-			creditCardTransaction.ThirdPartyMerchantKey = None
-			creditCardTransaction.TransactionReference = None
-
-			creditCardTransaction.Recurrency.DateToStartBilling = transaction.recurrency.dateToStartBilling
-			creditCardTransaction.Recurrency.FrequencyEnum = transaction.recurrency.frequencyEnum
-			creditCardTransaction.Recurrency.Interval = transaction.recurrency.interval
-			creditCardTransaction.Recurrency.OneDollarAuth = transaction.recurrency.oneDollarAuth
-			creditCardTransaction.Recurrency.Recurrences = transaction.recurrency.recurrences
-
-			transactionCollection.append(creditCardTransaction)
-
-		return transactionCollection
-
-
-
