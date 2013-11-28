@@ -85,47 +85,46 @@ class Gateway:
 		return boletoTransactionRequest	
 
 
-	#TODO
-	# def CreateCreditCardTransaction(self,request):
-	"""This method creates an CreateCreditCardTransaction object
+	
+	def CreateCreditCardTransaction(self,request):
+		"""This method creates an CreateCreditCardTransaction object
 
 	    :param request: A CreateOrderRequest
+	    :type request: CreateOrderRequest
 	    :returns: CreateCreditCardTransaction object    
 	    """
-	# 	url = self.getUrl()
 
-	# 	client = Client(url)
+		url = self.getUrl()
 
-	# 	transactionCollection = []
+	 	client = Client(url)
 
-	# 	creditCardTransaction = client.factory.create('ns0:CreditCardTransaction')
+	 	transactionCollection = []
 
-	# 	for transaction in request.creditCardTransactionCollection:
-	# 		creditCardTransaction.AmountInCents = None
-	# 		creditCardTransaction.CaptureDelayInMinutes = None
-	# 		creditCardTransaction.CreditCardBrandEnum = (CreditCardBrandEnum){value = None   }
-	# 		creditCardTransaction.CreditCardNumber = None
-	# 		creditCardTransaction.CreditCardOperationEnum =(CreditCardOperationEnum){value = None}
-	# 		creditCardTransaction.ExpMonth = None
-	# 		creditCardTransaction.ExpYear = None
-	# 		creditCardTransaction.HolderName = None
-	# 		creditCardTransaction.IataAmountInCents = None
-	# 		creditCardTransaction.InstallmentCount = None
-	# 		creditCardTransaction.InstantBuyKey = None
-	# 		creditCardTransaction.PaymentMethodCode = None
-	# 		creditCardTransaction.SecurityCode = None
-	# 		creditCardTransaction.ThirdPartyMerchantKey = None
-	# 		creditCardTransaction.TransactionReference = None
+	 	creditCardTransaction = client.factory.create('ns0:CreditCardTransaction')
 
-	# 		creditCardTransaction.Recurrency.DateToStartBilling = transaction.recurrency.dateToStartBilling
-	# 		creditCardTransaction.Recurrency.FrequencyEnum = transaction.recurrency.frequencyEnum
-	# 		creditCardTransaction.Recurrency.Interval = transaction.recurrency.interval
-	# 		creditCardTransaction.Recurrency.OneDollarAuth = transaction.recurrency.oneDollarAuth
-	# 		creditCardTransaction.Recurrency.Recurrences = transaction.recurrency.recurrences
+	 	for transaction in request.creditCardTransactionCollection:
+	 		creditCardTransaction.AmountInCents = transaction.amountInCents	 		
+	 		creditCardTransaction.CreditCardBrandEnum = transaction.creditCardBrandEnum
+	 		creditCardTransaction.CreditCardNumber = transaction.creditCardNumber
+	 		creditCardTransaction.CreditCardOperationEnum = transaction.creditCardOperationEnum
+	 		creditCardTransaction.ExpMonth = transaction.expirationMonth
+	 		creditCardTransaction.ExpYear = transaction.expirationYear
+	 		creditCardTransaction.HolderName = transaction.holderName	 		
+	 		creditCardTransaction.InstallmentCount = transaction.installmentCount
+	 		creditCardTransaction.PaymentMethodCode = transaction.paymentMethodCode
+	 		creditCardTransaction.SecurityCode = transaction.securityCode	 		
+	 		creditCardTransaction.TransactionReference = transaction.transactionReference
 
-	# 		transactionCollection.append(creditCardTransaction)
+	 		if transaction.recurrency is not None:
+		 		creditCardTransaction.Recurrency.DateToStartBilling = transaction.recurrency.dateToStartBilling
+		 		creditCardTransaction.Recurrency.FrequencyEnum = transaction.recurrency.frequencyEnum
+		 		creditCardTransaction.Recurrency.Interval = transaction.recurrency.interval
+		 		creditCardTransaction.Recurrency.OneDollarAuth = transaction.recurrency.oneDollarAuth
+		 		creditCardTransaction.Recurrency.Recurrences = transaction.recurrency.recurrences
 
-	# 	return transactionCollection
+	 		transactionCollection.append(creditCardTransaction)
+
+	 	return transactionCollection
 
 
 	def ManageOrder(self,request):
