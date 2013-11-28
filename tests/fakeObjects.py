@@ -50,10 +50,10 @@ def newBuyer():
 
 	buyer.buyerReference = '1'
 	buyer.email = 'marvin@universe.com'	
-	buyer.homePhone = '7777-7777'
+	buyer.homePhone = '+55(021)12345678'
 	buyer.ipAddress = '127.0.0.1'
-	buyer.mobilePhone = '21 9999-9999'
-	buyer.workPhone = '21 8888-8888'
+	buyer.mobilePhone = '+55(021)12345678'
+	buyer.workPhone = '+55(021)12345678'
 	buyer.name = 'Marvin'		
 	buyer.taxDocumentNumber = '00000000000'
 	buyer.addressCollection.append(newBuyerAddress())

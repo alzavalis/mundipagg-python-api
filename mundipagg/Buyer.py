@@ -27,12 +27,14 @@ class Buyer:
 		self.genderEnum = None
 
 		# Home phone [String]
+		# Pattern +##(###)########
 		self.homePhone = None
 
 		# IP address [String]
 		self.ipAddress = None
 
 		# Mobile Phone [String]
+		# Pattern +##(###)########
 		self.mobilePhone = None
 
 		# Work Phone [String]
