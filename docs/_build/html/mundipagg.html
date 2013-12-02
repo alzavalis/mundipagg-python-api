@@ -1,0 +1,895 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mundipagg Package &mdash; mundipagg-python-api 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="mundipagg-python-api 1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">mundipagg-python-api 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mundipagg-package">
+<h1>mundipagg Package<a class="headerlink" href="#mundipagg-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-mundipagg.BoletoTransaction">
+<span id="boletotransaction-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">BoletoTransaction</span></tt> Module<a class="headerlink" href="#module-mundipagg.BoletoTransaction" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mundipagg.BoletoTransaction.BoletoTransaction">
+<em class="property">class </em><tt class="descclassname">mundipagg.BoletoTransaction.</tt><tt class="descname">BoletoTransaction</tt><a class="headerlink" href="#mundipagg.BoletoTransaction.BoletoTransaction" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="mundipagg.BoletoTransaction.BoletoTransaction.amountInCents">
+<tt class="descname">amountInCents</tt><em class="property"> = 0</em><a class="headerlink" href="#mundipagg.BoletoTransaction.BoletoTransaction.amountInCents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BoletoTransaction.BoletoTransaction.bankNumber">
+<tt class="descname">bankNumber</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BoletoTransaction.BoletoTransaction.bankNumber" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BoletoTransaction.BoletoTransaction.daysToAddInBoletoExpirationDate">
+<tt class="descname">daysToAddInBoletoExpirationDate</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BoletoTransaction.BoletoTransaction.daysToAddInBoletoExpirationDate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BoletoTransaction.BoletoTransaction.instructions">
+<tt class="descname">instructions</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BoletoTransaction.BoletoTransaction.instructions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BoletoTransaction.BoletoTransaction.nossoNumero">
+<tt class="descname">nossoNumero</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BoletoTransaction.BoletoTransaction.nossoNumero" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BoletoTransaction.BoletoTransaction.transactionReference">
+<tt class="descname">transactionReference</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BoletoTransaction.BoletoTransaction.transactionReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mundipagg.Buyer">
+<span id="buyer-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">Buyer</span></tt> Module<a class="headerlink" href="#module-mundipagg.Buyer" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mundipagg.Buyer.Buyer">
+<em class="property">class </em><tt class="descclassname">mundipagg.Buyer.</tt><tt class="descname">Buyer</tt><a class="headerlink" href="#mundipagg.Buyer.Buyer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that represents a Buyer</p>
+<dl class="class">
+<dt id="mundipagg.Buyer.Buyer.DocumentType">
+<em class="property">class </em><tt class="descname">DocumentType</tt><a class="headerlink" href="#mundipagg.Buyer.Buyer.DocumentType" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.DocumentType.CNPJ">
+<tt class="descname">CNPJ</tt><em class="property"> = 'CNPJ'</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.DocumentType.CNPJ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.DocumentType.CPF">
+<tt class="descname">CPF</tt><em class="property"> = 'CPF'</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.DocumentType.CPF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mundipagg.Buyer.Buyer.GenderEnum">
+<em class="property">class </em><tt class="descclassname">Buyer.</tt><tt class="descname">GenderEnum</tt><a class="headerlink" href="#mundipagg.Buyer.Buyer.GenderEnum" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.GenderEnum.Female">
+<tt class="descname">Female</tt><em class="property"> = 'F'</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.GenderEnum.Female" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.GenderEnum.Male">
+<tt class="descname">Male</tt><em class="property"> = 'M'</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.GenderEnum.Male" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mundipagg.Buyer.Buyer.PersonTypeEnum">
+<em class="property">class </em><tt class="descclassname">Buyer.</tt><tt class="descname">PersonTypeEnum</tt><a class="headerlink" href="#mundipagg.Buyer.Buyer.PersonTypeEnum" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.PersonTypeEnum.Company">
+<tt class="descname">Company</tt><em class="property"> = 'Company'</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.PersonTypeEnum.Company" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.PersonTypeEnum.Person">
+<tt class="descname">Person</tt><em class="property"> = 'Person'</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.PersonTypeEnum.Person" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.addressCollection">
+<tt class="descclassname">Buyer.</tt><tt class="descname">addressCollection</tt><em class="property"> = []</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.addressCollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.buyerKey">
+<tt class="descclassname">Buyer.</tt><tt class="descname">buyerKey</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.buyerKey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.buyerReference">
+<tt class="descclassname">Buyer.</tt><tt class="descname">buyerReference</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.buyerReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.email">
+<tt class="descclassname">Buyer.</tt><tt class="descname">email</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.facebookId">
+<tt class="descclassname">Buyer.</tt><tt class="descname">facebookId</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.facebookId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.genderEnum">
+<tt class="descclassname">Buyer.</tt><tt class="descname">genderEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.genderEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.homePhone">
+<tt class="descclassname">Buyer.</tt><tt class="descname">homePhone</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.homePhone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.ipAddress">
+<tt class="descclassname">Buyer.</tt><tt class="descname">ipAddress</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.ipAddress" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.mobilePhone">
+<tt class="descclassname">Buyer.</tt><tt class="descname">mobilePhone</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.mobilePhone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.name">
+<tt class="descclassname">Buyer.</tt><tt class="descname">name</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.personTypeEnum">
+<tt class="descclassname">Buyer.</tt><tt class="descname">personTypeEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.personTypeEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.taxDocumentNumber">
+<tt class="descclassname">Buyer.</tt><tt class="descname">taxDocumentNumber</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.taxDocumentNumber" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.taxDocumentTypeEnum">
+<tt class="descclassname">Buyer.</tt><tt class="descname">taxDocumentTypeEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.taxDocumentTypeEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.twitterId">
+<tt class="descclassname">Buyer.</tt><tt class="descname">twitterId</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.twitterId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Buyer.Buyer.workPhone">
+<tt class="descclassname">Buyer.</tt><tt class="descname">workPhone</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Buyer.Buyer.workPhone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mundipagg.BuyerAddress">
+<span id="buyeraddress-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">BuyerAddress</span></tt> Module<a class="headerlink" href="#module-mundipagg.BuyerAddress" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mundipagg.BuyerAddress.BuyerAddress">
+<em class="property">class </em><tt class="descclassname">mundipagg.BuyerAddress.</tt><tt class="descname">BuyerAddress</tt><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that represents a Buyer address</p>
+<dl class="class">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.AddressTypeEnum">
+<em class="property">class </em><tt class="descname">AddressTypeEnum</tt><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.AddressTypeEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Address Type Enum</p>
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.AddressTypeEnum.Billing">
+<tt class="descname">Billing</tt><em class="property"> = 'Billing'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.AddressTypeEnum.Billing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.AddressTypeEnum.Home">
+<tt class="descname">Home</tt><em class="property"> = 'Residential'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.AddressTypeEnum.Home" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.AddressTypeEnum.Shipping">
+<tt class="descname">Shipping</tt><em class="property"> = 'Shipping'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.AddressTypeEnum.Shipping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.AddressTypeEnum.Work">
+<tt class="descname">Work</tt><em class="property"> = 'Comercial'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.AddressTypeEnum.Work" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.CountryEnum">
+<em class="property">class </em><tt class="descclassname">BuyerAddress.</tt><tt class="descname">CountryEnum</tt><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.CountryEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Country Enum</p>
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Argentina">
+<tt class="descname">Argentina</tt><em class="property"> = 'Argentina'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Argentina" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Bolivia">
+<tt class="descname">Bolivia</tt><em class="property"> = 'Bolivia'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Bolivia" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Brazil">
+<tt class="descname">Brazil</tt><em class="property"> = 'Brazil'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Brazil" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Chile">
+<tt class="descname">Chile</tt><em class="property"> = 'Chile'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Chile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Colombia">
+<tt class="descname">Colombia</tt><em class="property"> = 'Colombia'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Colombia" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Mexico">
+<tt class="descname">Mexico</tt><em class="property"> = 'Mexico'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Mexico" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Paraguay">
+<tt class="descname">Paraguay</tt><em class="property"> = 'Paraguay'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Paraguay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.CountryEnum.UnitedStates">
+<tt class="descname">UnitedStates</tt><em class="property"> = 'USA'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.CountryEnum.UnitedStates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Uruguay">
+<tt class="descname">Uruguay</tt><em class="property"> = 'Uruguay'</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.CountryEnum.Uruguay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.addressTypeEnum">
+<tt class="descclassname">BuyerAddress.</tt><tt class="descname">addressTypeEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.addressTypeEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.city">
+<tt class="descclassname">BuyerAddress.</tt><tt class="descname">city</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.city" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.complement">
+<tt class="descclassname">BuyerAddress.</tt><tt class="descname">complement</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.complement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.contryEnum">
+<tt class="descclassname">BuyerAddress.</tt><tt class="descname">contryEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.contryEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.district">
+<tt class="descclassname">BuyerAddress.</tt><tt class="descname">district</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.district" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.number">
+<tt class="descclassname">BuyerAddress.</tt><tt class="descname">number</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.state">
+<tt class="descclassname">BuyerAddress.</tt><tt class="descname">state</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.street">
+<tt class="descclassname">BuyerAddress.</tt><tt class="descname">street</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.street" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.BuyerAddress.BuyerAddress.zipCode">
+<tt class="descclassname">BuyerAddress.</tt><tt class="descname">zipCode</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.BuyerAddress.BuyerAddress.zipCode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mundipagg.CreateOrderRequest">
+<span id="createorderrequest-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">CreateOrderRequest</span></tt> Module<a class="headerlink" href="#module-mundipagg.CreateOrderRequest" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest">
+<em class="property">class </em><tt class="descclassname">mundipagg.CreateOrderRequest.</tt><tt class="descname">CreateOrderRequest</tt><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.CurrencyIsoEnum">
+<em class="property">class </em><tt class="descname">CurrencyIsoEnum</tt><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.CurrencyIsoEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Currency Iso Enum</p>
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.CurrencyIsoEnum.AmericanDollar">
+<tt class="descname">AmericanDollar</tt><em class="property"> = 'USD'</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.CurrencyIsoEnum.AmericanDollar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.CurrencyIsoEnum.BrazillianReal">
+<tt class="descname">BrazillianReal</tt><em class="property"> = 'BRL'</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.CurrencyIsoEnum.BrazillianReal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.amountInCents">
+<tt class="descclassname">CreateOrderRequest.</tt><tt class="descname">amountInCents</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.amountInCents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.amountInCentsToConsiderPaid">
+<tt class="descclassname">CreateOrderRequest.</tt><tt class="descname">amountInCentsToConsiderPaid</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.amountInCentsToConsiderPaid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.boletoTransactionCollection">
+<tt class="descclassname">CreateOrderRequest.</tt><tt class="descname">boletoTransactionCollection</tt><em class="property"> = []</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.boletoTransactionCollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.buyer">
+<tt class="descclassname">CreateOrderRequest.</tt><tt class="descname">buyer</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.buyer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.creditCardTransactionCollection">
+<tt class="descclassname">CreateOrderRequest.</tt><tt class="descname">creditCardTransactionCollection</tt><em class="property"> = []</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.creditCardTransactionCollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.currencyIsoEnum">
+<tt class="descclassname">CreateOrderRequest.</tt><tt class="descname">currencyIsoEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.currencyIsoEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.merchantKey">
+<tt class="descclassname">CreateOrderRequest.</tt><tt class="descname">merchantKey</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.merchantKey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.orderReference">
+<tt class="descclassname">CreateOrderRequest.</tt><tt class="descname">orderReference</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.orderReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreateOrderRequest.CreateOrderRequest.requestkey">
+<tt class="descclassname">CreateOrderRequest.</tt><tt class="descname">requestkey</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreateOrderRequest.CreateOrderRequest.requestkey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mundipagg.CreditCardTransaction">
+<span id="creditcardtransaction-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">CreditCardTransaction</span></tt> Module<a class="headerlink" href="#module-mundipagg.CreditCardTransaction" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction">
+<em class="property">class </em><tt class="descclassname">mundipagg.CreditCardTransaction.</tt><tt class="descname">CreditCardTransaction</tt><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum">
+<em class="property">class </em><tt class="descname">BrandEnum</tt><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Credit card brand enum</p>
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.AmericanExpress">
+<tt class="descname">AmericanExpress</tt><em class="property"> = 'Amex'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.AmericanExpress" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Aura">
+<tt class="descname">Aura</tt><em class="property"> = 'Aura'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Aura" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Diners">
+<tt class="descname">Diners</tt><em class="property"> = 'Diners'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Diners" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Discover">
+<tt class="descname">Discover</tt><em class="property"> = 'Discover'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Discover" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Elo">
+<tt class="descname">Elo</tt><em class="property"> = 'Elo'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Elo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Hipercard">
+<tt class="descname">Hipercard</tt><em class="property"> = 'Hipercard'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Hipercard" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.MasterCard">
+<tt class="descname">MasterCard</tt><em class="property"> = 'MasterCard'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.MasterCard" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Visa">
+<tt class="descname">Visa</tt><em class="property"> = 'Visa'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.BrandEnum.Visa" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.OperationEnum">
+<em class="property">class </em><tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">OperationEnum</tt><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.OperationEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Operation type enum</p>
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.OperationEnum.AuthAndCapture">
+<tt class="descname">AuthAndCapture</tt><em class="property"> = 'AuthAndCapture'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.OperationEnum.AuthAndCapture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.OperationEnum.AuthAndCaptureDelay">
+<tt class="descname">AuthAndCaptureDelay</tt><em class="property"> = 'AuthAndCaptureDelay'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.OperationEnum.AuthAndCaptureDelay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.OperationEnum.AuthOnly">
+<tt class="descname">AuthOnly</tt><em class="property"> = 'AuthOnly'</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.OperationEnum.AuthOnly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.amountInCents">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">amountInCents</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.amountInCents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.brandEnum">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">brandEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.brandEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.creditCardBrandEnum">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">creditCardBrandEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.creditCardBrandEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.creditCardNumber">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">creditCardNumber</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.creditCardNumber" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.creditCardOperationEnum">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">creditCardOperationEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.creditCardOperationEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.expirationMonth">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">expirationMonth</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.expirationMonth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.expirationYear">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">expirationYear</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.expirationYear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.holderName">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">holderName</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.holderName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.installmentCount">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">installmentCount</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.installmentCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.operationEnum">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">operationEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.operationEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.paymentMethodCode">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">paymentMethodCode</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.paymentMethodCode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.recurrency">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">recurrency</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.recurrency" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.securityCode">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">securityCode</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.securityCode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.CreditCardTransaction.CreditCardTransaction.transactionReference">
+<tt class="descclassname">CreditCardTransaction.</tt><tt class="descname">transactionReference</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.CreditCardTransaction.CreditCardTransaction.transactionReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mundipagg.Gateway">
+<span id="gateway-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">Gateway</span></tt> Module<a class="headerlink" href="#module-mundipagg.Gateway" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mundipagg.Gateway.Gateway">
+<em class="property">class </em><tt class="descclassname">mundipagg.Gateway.</tt><tt class="descname">Gateway</tt><big>(</big><em>environment='test'</em><big>)</big><a class="headerlink" href="#mundipagg.Gateway.Gateway" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class responsable for comunicating with the service via SOAP</p>
+<dl class="method">
+<dt id="mundipagg.Gateway.Gateway.CreateBoletoTransaction">
+<tt class="descname">CreateBoletoTransaction</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#mundipagg.Gateway.Gateway.CreateBoletoTransaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates an CreateBoletoTransaction object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> (<em>CreateOrderRequest</em>) &#8211; A CreateOrderRequest</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">BoletoTransaction object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mundipagg.Gateway.Gateway.CreateBuyer">
+<tt class="descname">CreateBuyer</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#mundipagg.Gateway.Gateway.CreateBuyer" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates an CreateBuyer object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> &#8211; A CreateOrderRequest</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Buyer object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mundipagg.Gateway.Gateway.CreateCreditCardTransaction">
+<tt class="descname">CreateCreditCardTransaction</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#mundipagg.Gateway.Gateway.CreateCreditCardTransaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates an CreateCreditCardTransaction object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> (<em>CreateOrderRequest</em>) &#8211; A CreateOrderRequest</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CreateCreditCardTransaction object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mundipagg.Gateway.Gateway.CreateOrder">
+<tt class="descname">CreateOrder</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#mundipagg.Gateway.Gateway.CreateOrder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the CreateOrder method</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> &#8211; A CreateOrderRequest</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mundipagg.Gateway.Gateway.ManageOrder">
+<tt class="descname">ManageOrder</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#mundipagg.Gateway.Gateway.ManageOrder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the ManageOrder method</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> &#8211; An CreateOrderRequest</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mundipagg.Gateway.Gateway.QueryOrder">
+<tt class="descname">QueryOrder</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#mundipagg.Gateway.Gateway.QueryOrder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the QueryOrder method</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> &#8211; A QueryOrderRequest</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mundipagg.Gateway.Gateway.getUrl">
+<tt class="descname">getUrl</tt><big>(</big><big>)</big><a class="headerlink" href="#mundipagg.Gateway.Gateway.getUrl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decides with URL to use based in the environment value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">URL string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mundipagg.ManageOrderRequest">
+<span id="manageorderrequest-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">ManageOrderRequest</span></tt> Module<a class="headerlink" href="#module-mundipagg.ManageOrderRequest" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest">
+<em class="property">class </em><tt class="descclassname">mundipagg.ManageOrderRequest.</tt><tt class="descname">ManageOrderRequest</tt><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.ManageTransactionRequest">
+<em class="property">class </em><tt class="descname">ManageTransactionRequest</tt><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.ManageTransactionRequest" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.ManageTransactionRequest.amountInCents">
+<tt class="descname">amountInCents</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.ManageTransactionRequest.amountInCents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.ManageTransactionRequest.transactionKey">
+<tt class="descname">transactionKey</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.ManageTransactionRequest.transactionKey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.ManageTransactionRequest.transactionReference">
+<tt class="descname">transactionReference</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.ManageTransactionRequest.transactionReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.OperationEnum">
+<em class="property">class </em><tt class="descclassname">ManageOrderRequest.</tt><tt class="descname">OperationEnum</tt><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.OperationEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Operation Enum</p>
+<dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.OperationEnum.Capture">
+<tt class="descname">Capture</tt><em class="property"> = 'Capture'</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.OperationEnum.Capture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.OperationEnum.Void">
+<tt class="descname">Void</tt><em class="property"> = 'Void'</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.OperationEnum.Void" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.manageOrderOperationEnum">
+<tt class="descclassname">ManageOrderRequest.</tt><tt class="descname">manageOrderOperationEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.manageOrderOperationEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.merchantKey">
+<tt class="descclassname">ManageOrderRequest.</tt><tt class="descname">merchantKey</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.merchantKey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.orderKey">
+<tt class="descclassname">ManageOrderRequest.</tt><tt class="descname">orderKey</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.orderKey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.orderReference">
+<tt class="descclassname">ManageOrderRequest.</tt><tt class="descname">orderReference</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.orderReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.requestKey">
+<tt class="descclassname">ManageOrderRequest.</tt><tt class="descname">requestKey</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.requestKey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.ManageOrderRequest.ManageOrderRequest.transactionCollection">
+<tt class="descclassname">ManageOrderRequest.</tt><tt class="descname">transactionCollection</tt><em class="property"> = []</em><a class="headerlink" href="#mundipagg.ManageOrderRequest.ManageOrderRequest.transactionCollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mundipagg.QueryOrderRequest">
+<span id="queryorderrequest-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">QueryOrderRequest</span></tt> Module<a class="headerlink" href="#module-mundipagg.QueryOrderRequest" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mundipagg.QueryOrderRequest.QueryOrderRequest">
+<em class="property">class </em><tt class="descclassname">mundipagg.QueryOrderRequest.</tt><tt class="descname">QueryOrderRequest</tt><a class="headerlink" href="#mundipagg.QueryOrderRequest.QueryOrderRequest" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="mundipagg.QueryOrderRequest.QueryOrderRequest.merchantKey">
+<tt class="descname">merchantKey</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.QueryOrderRequest.QueryOrderRequest.merchantKey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.QueryOrderRequest.QueryOrderRequest.orderKey">
+<tt class="descname">orderKey</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.QueryOrderRequest.QueryOrderRequest.orderKey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.QueryOrderRequest.QueryOrderRequest.orderReference">
+<tt class="descname">orderReference</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.QueryOrderRequest.QueryOrderRequest.orderReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.QueryOrderRequest.QueryOrderRequest.requestKey">
+<tt class="descname">requestKey</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.QueryOrderRequest.QueryOrderRequest.requestKey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mundipagg.Recurrency">
+<span id="recurrency-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">Recurrency</span></tt> Module<a class="headerlink" href="#module-mundipagg.Recurrency" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mundipagg.Recurrency.Recurrency">
+<em class="property">class </em><tt class="descclassname">mundipagg.Recurrency.</tt><tt class="descname">Recurrency</tt><a class="headerlink" href="#mundipagg.Recurrency.Recurrency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that hold recurrency transaction information</p>
+<dl class="class">
+<dt id="mundipagg.Recurrency.Recurrency.Frequency">
+<em class="property">class </em><tt class="descname">Frequency</tt><a class="headerlink" href="#mundipagg.Recurrency.Recurrency.Frequency" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="mundipagg.Recurrency.Recurrency.Frequency.Daily">
+<tt class="descname">Daily</tt><em class="property"> = 'Daily'</em><a class="headerlink" href="#mundipagg.Recurrency.Recurrency.Frequency.Daily" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Recurrency.Recurrency.Frequency.Monthly">
+<tt class="descname">Monthly</tt><em class="property"> = 'Monthly'</em><a class="headerlink" href="#mundipagg.Recurrency.Recurrency.Frequency.Monthly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Recurrency.Recurrency.Frequency.Yearly">
+<tt class="descname">Yearly</tt><em class="property"> = 'Yearly'</em><a class="headerlink" href="#mundipagg.Recurrency.Recurrency.Frequency.Yearly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Recurrency.Recurrency.dateToStartBilling">
+<tt class="descclassname">Recurrency.</tt><tt class="descname">dateToStartBilling</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Recurrency.Recurrency.dateToStartBilling" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Recurrency.Recurrency.frequencyEnum">
+<tt class="descclassname">Recurrency.</tt><tt class="descname">frequencyEnum</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Recurrency.Recurrency.frequencyEnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Recurrency.Recurrency.interval">
+<tt class="descclassname">Recurrency.</tt><tt class="descname">interval</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Recurrency.Recurrency.interval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Recurrency.Recurrency.oneDollarAuth">
+<tt class="descclassname">Recurrency.</tt><tt class="descname">oneDollarAuth</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Recurrency.Recurrency.oneDollarAuth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mundipagg.Recurrency.Recurrency.recurrences">
+<tt class="descclassname">Recurrency.</tt><tt class="descname">recurrences</tt><em class="property"> = None</em><a class="headerlink" href="#mundipagg.Recurrency.Recurrency.recurrences" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">mundipagg Package</a><ul>
+<li><a class="reference internal" href="#module-mundipagg.BoletoTransaction"><tt class="docutils literal"><span class="pre">BoletoTransaction</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-mundipagg.Buyer"><tt class="docutils literal"><span class="pre">Buyer</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-mundipagg.BuyerAddress"><tt class="docutils literal"><span class="pre">BuyerAddress</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-mundipagg.CreateOrderRequest"><tt class="docutils literal"><span class="pre">CreateOrderRequest</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-mundipagg.CreditCardTransaction"><tt class="docutils literal"><span class="pre">CreditCardTransaction</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-mundipagg.Gateway"><tt class="docutils literal"><span class="pre">Gateway</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-mundipagg.ManageOrderRequest"><tt class="docutils literal"><span class="pre">ManageOrderRequest</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-mundipagg.QueryOrderRequest"><tt class="docutils literal"><span class="pre">QueryOrderRequest</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-mundipagg.Recurrency"><tt class="docutils literal"><span class="pre">Recurrency</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/mundipagg.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">mundipagg-python-api 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andre Galdino.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
