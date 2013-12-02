@@ -9,6 +9,7 @@ from mundipagg import CreateOrderRequest
 from mundipagg import CreditCardTransaction
 from mundipagg import BoletoTransaction
 from mundipagg import QueryOrderRequest
+from mundipagg import ManageOrderRequest
 
 def newBoletoTransaction():
 	"""Creates a fake BoletoTransaction
@@ -37,7 +38,9 @@ def newBuyerAddress():
 	buyerAddress.district = 'Bangu'
 	buyerAddress.state = 'Rio de Janeiro'
 	buyerAddress.street = 'Rua dos bobos '
-	buyerAddress.zipCode = '21382145'	
+	buyerAddress.zipCode = '21382145'
+	buyerAddress.addressTypeEnum = buyerAddress.AddressEnum.Home
+	buyerAddress.countryEnum = buyerAddress.Country.Brazil
 
 	return buyerAddress
 
@@ -93,11 +96,12 @@ def newCreateOrderRequest():
 
 	createOrderRequest.amountInCents = 10
 	createOrderRequest.amountInCentsToConsiderPaid = 0	
-	createOrderRequest.buyer = '1'
-	createOrderRequest.merchantKey = uuid.uuid1()
+	createOrderRequest.buyer = newBuyer()
+	createOrderRequest.merchantKey = '8A2DD57F-1ED9-4153-B4CE-69683EFADAD5'
 	createOrderRequest.orderReference = 'Order 42'
 	createOrderRequest.creditCardTransactionCollection.append(newCreditCardTransaction())
-	createOrderRequest.boletoTransactionCollection.append(newBoletoTransaction())
+	createOrderRequest.emailUpdateToBuyerEnum = 'No'
+	#createOrderRequest.boletoTransactionCollection.append(newBoletoTransaction())
 
 	return createOrderRequest
 
@@ -108,10 +112,26 @@ def newQueryOrderRequest():
 	"""
 	queryOrderRequest = QueryOrderRequest.QueryOrderRequest()
 
-	self.merchantKey = uuid.uuid1()
-	self.orderKey = uuid.uuid1()
-	self.orderReference = 'Order 42'
-	self.requestKey = uuid.uuid1()
+	queryOrderRequest.merchantKey = '8A2DD57F-1ED9-4153-B4CE-69683EFADAD5'
+	queryOrderRequest.orderKey = uuid.uuid1()
+	queryOrderRequest.orderReference = 'Order 42'
+	queryOrderRequest.requestKey = uuid.uuid1()
 
 
 	return queryOrderRequest
+
+def newManageOrder():
+
+	orderRequest = ManageOrderRequest.ManageOrderRequest()
+
+	createOrderRequest = newCreateOrderRequest()
+
+	orderRequest.transactionCollection.append(createOrderRequest.creditCardTransactionCollection)
+	orderRequest.transactionCollection.append(createOrderRequest.boletoTransactionCollection)
+	orderRequest.manageOrderOperationEnum = orderRequest.operationEnum.Capture
+	orderRequest.merchantKey = createOrderRequest.merchantKey	
+	orderRequest.orderKey = uuid.uuid1()
+	orderRequest.orderReference	= createOrderRequest.orderReference
+	orderRequest.requestKey	= None
+
+	return orderRequest

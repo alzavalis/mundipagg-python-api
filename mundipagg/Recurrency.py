@@ -23,4 +23,4 @@ class Recurrency:
 
 	
 	def __init__(self):
-		frequencyEnum = self.Frequency	
+		self.frequencyEnum = self.Frequency	

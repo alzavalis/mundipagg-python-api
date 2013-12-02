@@ -40,6 +40,23 @@ class Gateway:
 
 		buyer = client.factory.create('ns0:Buyer')
 
+		buyerAddress = client.factory.create('ns0:BuyerAddress')
+
+		addressCollection = []
+
+		for address in request.buyer.addressCollection:
+			buyerAddress.AddressTypeEnum = address.addressTypeEnum
+			buyerAddress.City = address.city
+			buyerAddress.Complement = address.complement
+			buyerAddress.CountryEnum = address.countryEnum
+			buyerAddress.District = address.district
+			buyerAddress.Number = address.number
+			buyerAddress.State = address.state
+			buyerAddress.Street = address.street
+			buyerAddress.ZipCode = address.zipCode
+
+			addressCollection.append(buyerAddress)			
+
 		buyer.BuyerKey = request.buyer.buyerKey
 		buyer.BuyerReference = request.buyer.buyerReference
 		buyer.Email = request.buyer.email
@@ -53,7 +70,7 @@ class Gateway:
 		buyer.TaxDocumentNumber = request.buyer.taxDocumentNumber
 		buyer.TaxDocumentTypeEnum = request.buyer.taxDocumentTypeEnum
 		buyer.WorkPhone = request.buyer.workPhone
-		buyer.BuyerAddressCollection = request.buyer.buyerAddressCollection
+		buyer.BuyerAddressCollection = addressCollection
 
 		return buyer
 
@@ -158,10 +175,7 @@ class Gateway:
 		arrayOfManageCreditCardTransactionRequest = ManageCreditCardTransactionRequest
 
 		manageOrderRequest.ManageCreditCardTransactionCollection = arrayOfManageCreditCardTransactionRequest
-		manageOrderRequest.ManageOrderOperationEnum = request.manageOrderOperationEnum.Capture
-
-
-		print manageOrderRequest
+		manageOrderRequest.ManageOrderOperationEnum = request.operationEnum.Capture
 
 		result = client.service.ManageOrder(manageOrderRequest)
 		print result
@@ -193,7 +207,9 @@ class Gateway:
 
 		client = Client(url)
 
-		createOrderRequest = client.factory.create('ns0:CreateOrderResponse')
+		createOrderRequest = client.factory.create('ns0:CreateOrderRequest')
+
+		print createOrderRequest
 
 		createOrderRequest.AmountInCents = request.amountInCents
 		createOrderRequest.AmountInCentsToConsiderPaid = request.amountInCentsToConsiderPaid
@@ -201,6 +217,7 @@ class Gateway:
 		createOrderRequest.MerchantKey = request.merchantKey
 		createOrderRequest.OrderReference = request.orderReference
 		createOrderRequest.RequestKey = request.requestKey
+		createOrderRequest.EmailUpdateToBuyerEnum = request.emailUpdateToBuyerEnum
 
 		if request.buyer is None:
 			createOrderRequest.Buyer = request.buyer
@@ -214,7 +231,7 @@ class Gateway:
 			createOrderRequest.CreditCardTransactionCollection = None
 
 		if request.boletoTransactionCollection is not None and request.boletoTransactionCollection.count > 0:
-			boletoTransactionCollection = self.CreateBoletoTransactionRequest(request)
+			boletoTransactionCollection = self.CreateBoletoTransaction(request)
 			createOrderRequest.BoletoTransactionCollection = boletoTransactionCollection
 		else:
 			createOrderRequest.BoletoTransactionCollection = None

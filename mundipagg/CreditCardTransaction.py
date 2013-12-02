@@ -63,6 +63,6 @@ class CreditCardTransaction:
 
 
 	def __init__(self):
-		brandEnum = BrandEnum	
-		operationEnum = OperationEnum
+		self.brandEnum = self.BrandEnum	
+		self.operationEnum = self.OperationEnum
 		

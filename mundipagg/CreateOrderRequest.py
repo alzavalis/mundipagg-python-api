@@ -29,7 +29,10 @@ class CreateOrderRequest:
 	# If not send, it will be generate automatically in the webservice and returned in response.
     # Web service request identification, it is used for investigate problems with webservice requests.
     # @return [Guid] Globally Unique Identifier. 		
-	requestkey = None
+	requestKey = None
+
+	# Not used
+	emailUpdateToBuyerEnum = 'No'
 
 	class CurrencyIsoEnum:
 		"""Currency Iso Enum"""
@@ -37,6 +40,6 @@ class CreateOrderRequest:
 		AmericanDollar = 'USD'
 
 	def __init__(self):
-		self.requestkey = '00000000-0000-0000-0000-000000000000'
+		self.requestKey = '00000000-0000-0000-0000-000000000000'
 		self.currencyIsoEnum = self.CurrencyIsoEnum.BrazillianReal
 		

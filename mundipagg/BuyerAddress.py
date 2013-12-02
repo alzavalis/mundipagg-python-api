@@ -11,7 +11,7 @@ class BuyerAddress:
 	complement = None
 
 	# Address Country
-	contryEnum = None
+	countryEnum = None
 
 	# District [String]
 	district = None
@@ -26,7 +26,11 @@ class BuyerAddress:
 	street = None
 
 	# Zip Code [String]
-	zipCode = None	
+	zipCode = None
+
+	AddressEnum = None
+
+	Country = None
 
 
 	class AddressTypeEnum: 
@@ -49,7 +53,8 @@ class BuyerAddress:
 		Paraguay = 'Paraguay'			
 	
 	def __init__(self):
-		self.contryEnum = self.CountryEnum.Brazil
+		self.Country = self.CountryEnum
+		self.AddressEnum = self.AddressTypeEnum
+		self.countryEnum = self.CountryEnum.Brazil
 		self.addressTypeEnum = self.AddressTypeEnum.Home
-		
 		

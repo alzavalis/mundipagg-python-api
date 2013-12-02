@@ -20,7 +20,7 @@ class ManageOrderRequest:
     # [Guid] 
 	requestKey	= None
 	
-	#self.operationEnum = self.OperationEnum
+	operationEnum = None
 
 	class OperationEnum:
 		"""Operation Enum"""
@@ -30,7 +30,7 @@ class ManageOrderRequest:
 	
 	def __init__(self):
 		self.requestKey	= '00000000-0000-0000-0000-000000000000'
-		self.manageOrderOperationEnum = self.OperationEnum
+		self.operationEnum = self.OperationEnum
 		
 
 	class ManageTransactionRequest:
