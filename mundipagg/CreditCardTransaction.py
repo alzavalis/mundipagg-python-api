@@ -1,4 +1,48 @@
 class CreditCardTransaction:
+	"""Class that hold Credit Card Transaction information"""
+
+	# Transaction amount in cents [Long]
+	amountInCents = None
+
+	# Card brand. Use the BrandEnum class [String]
+	creditCardBrandEnum = None
+
+	# Credit card number [String]
+	creditCardNumber = None
+
+	# Type of operation. User OperationEnum class [String]
+	creditCardOperationEnum = None
+
+	# Credit card expiration month [Integer]
+	expirationMonth = None
+
+	# Credit card expiration year [Integer]
+	expirationYear = None
+
+	# Name in the credit card [String]
+	holderName = None
+
+	# Transaction installments count [Integer]
+	installmentCount = None
+
+	# Card security code [Integer]
+	securityCode = None
+
+	# Code to select the payment method. Can be Cielo, Redecard and others [Integer]
+	paymentMethodCode = None
+
+	# Custom transaction identifier [String]
+	transactionReference = None
+
+	# Fill this property when creating a recurrency transaction. 
+	# [Recurrency] Transaction recurrency information.
+	recurrency = None
+
+	# Brand enum
+	brandEnum = None
+
+	# Operation enum
+	operationEnum = None
 
 	class BrandEnum:
 		"""Credit card brand enum"""
@@ -19,46 +63,6 @@ class CreditCardTransaction:
 
 
 	def __init__(self):
-
-		# Transaction amount in cents [Long]
-		self.amountInCents = None
-
-		# Card brand. Use the BrandEnum class [String]
-		self.creditCardBrandEnum = None
-
-		# Credit card number [String]
-		self.creditCardNumber = None
-
-		# Type of operation. User OperationEnum class [String]
-		self.creditCardOperationEnum = None
-
-		# Credit card expiration month [Integer]
-		self.expirationMonth = None
-
-		# Credit card expiration year [Integer]
-		self.expirationYear = None
-
-		# Name in the credit card [String]
-		self.holderName = None
-
-		# Transaction installments count [Integer]
-		self.installmentCount = None
-
-		# Card security code [Integer]
-		self.securityCode = None
-
-		# Code to select the payment method. Can be Cielo, Redecard and others [Integer]
-		self.paymentMethodCode = None
-
-		# Custom transaction identifier [String]
-		self.transactionReference = None
-
-		# Fill this property when creating a recurrency transaction. 
-   		# [Recurrency] Transaction recurrency information.
-		self.recurrency = None
-
-		# Brand enum
-		self.brandEnum = self.BrandEnum
-
-		# Operation enum
-		self.operationEnum = self.OperationEnum
+		brandEnum = BrandEnum	
+		operationEnum = OperationEnum
+		

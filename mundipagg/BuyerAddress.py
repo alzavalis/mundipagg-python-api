@@ -1,6 +1,33 @@
 class BuyerAddress:
 	"""Class that represents a Buyer address"""
 
+	# Address type [String]
+	addressTypeEnum = None
+
+	# City [String]
+	city = None
+
+	# Address complement [String]
+	complement = None
+
+	# Address Country
+	contryEnum = None
+
+	# District [String]
+	district = None
+
+	# Address number [String]
+	number = None
+
+	# Address State [String]
+	state = None
+
+	# Street [String]
+	street = None
+
+	# Zip Code [String]
+	zipCode = None	
+
 
 	class AddressTypeEnum: 
 		"""Address Type Enum"""
@@ -22,30 +49,7 @@ class BuyerAddress:
 		Paraguay = 'Paraguay'			
 	
 	def __init__(self):
-		# Address type [String]
-		self.addressTypeEnum = self.AddressTypeEnum.Home
-
-		# City [String]
-		self.city = None
-
-		# Address complement [String]
-		self.complement = None
-
-		# Address Country
 		self.contryEnum = self.CountryEnum.Brazil
-
-		# District [String]
-		self.district = None
-
-		# Address number [String]
-		self.number = None
-
-		# Address State [String]
-		self.state = None
-
-		# Street [String]
-		self.street = None
-
-		# Zip Code [String]
-		self.zipCode = None	
+		self.addressTypeEnum = self.AddressTypeEnum.Home
+		
 		
