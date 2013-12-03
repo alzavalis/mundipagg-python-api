@@ -8,6 +8,7 @@ Python API for integration with MundiPagg payment web services.
 
 
 ## Documentation
+* [ReadTheDocs](http://mundipagg-python-api.readthedocs.org/en/latest/)
 
 
 ## LICENSE
