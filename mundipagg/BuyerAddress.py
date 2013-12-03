@@ -1,35 +1,37 @@
 class BuyerAddress:
-	"""Class that represents a Buyer address"""
+	"""	Class that represents a Buyer Address """
 
-	# Address type [String]
+	#: Address type [String]
 	addressTypeEnum = None
 
-	# City [String]
+	#: City [String]
 	city = None
 
-	# Address complement [String]
+	#: Address complement [String]
 	complement = None
 
-	# Address Country
+	#: Address Country
 	countryEnum = None
 
-	# District [String]
+	#: District [String]
 	district = None
 
-	# Address number [String]
+	#: Address number [String]
 	number = None
 
-	# Address State [String]
+	#: Address State [String]
 	state = None
 
-	# Street [String]
+	#: Street [String]
 	street = None
 
-	# Zip Code [String]
+	#: Zip Code [String]
 	zipCode = None
 
+	#: Address Enum defined on init
 	AddressEnum = None
 
+	#: Country Enum defined on init
 	Country = None
 
 

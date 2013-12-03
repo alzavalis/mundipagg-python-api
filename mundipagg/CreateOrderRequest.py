@@ -1,37 +1,37 @@
 class CreateOrderRequest:
 	"""Class that hold an CreateOrderRequest information"""
 
-	# Order amount in cents [long]
+	#: Order amount in cents [long]
 	amountInCents = None
 
-	# Amount (in cents) to consider the order paid
+	#: Amount (in cents) to consider the order paid
 	amountInCentsToConsiderPaid = None
 
-	# Order amount currency [String]
+	#: Order amount currency [String]
 	currencyIsoEnum = None
 
-	# Buyer instance
+	#: Buyer instance
 	buyer = None
 
-	# Mundipagg merchant identification
+	#: Mundipagg merchant identification
 	merchantKey = None
 
-	# If merchant not send OrderReference, Mundipagg will generate and return in the response.
-    # @return [String] Custom order identification.
+	#: If merchant not send OrderReference, Mundipagg will generate and return in the response.
+    #: @return [String] Custom order identification.
 	orderReference = None
 
-	# list with all credit card transaction [List]
+	#: list with all credit card transaction [List]
 	creditCardTransactionCollection = []
 
-	# List with all boleto transaction [List]
+	#: List with all boleto transaction [List]
 	boletoTransactionCollection = []
 
-	# If not send, it will be generate automatically in the webservice and returned in response.
-    # Web service request identification, it is used for investigate problems with webservice requests.
-    # @return [Guid] Globally Unique Identifier. 		
+	#: If not send, it will be generate automatically in the webservice and returned in response.
+    #: Web service request identification, it is used for investigate problems with webservice requests.
+    #: @return [Guid] Globally Unique Identifier. 		
 	requestKey = None
 
-	# Not used
+	#: Not used
 	emailUpdateToBuyerEnum = 'No'
 
 	class CurrencyIsoEnum:

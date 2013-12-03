@@ -1,19 +1,19 @@
 class Recurrency:
 	"""Class that hold recurrency transaction information"""
 	
-	# Date the first recurrency will be charged [Date]
+	#: Date the first recurrency will be charged [Date]
 	dateToStartBilling = None
 
-	# Indicating the recurrency frequency [String]
+	#: Indicating the recurrency frequency [String]
 	frequencyEnum = None
 
-	# Recurrency interval [Integer]
+	#: Recurrency interval [Integer]
 	interval = None
 
-	# Indicates whether the One webservice will run a OneDollarAuth [Boolean]
+	#: Indicates whether the One webservice will run a OneDollarAuth [Boolean]
 	oneDollarAuth = None
 
-	# Number of recurrencies [Integer]
+	#: Number of recurrencies [Integer]
 	recurrences = None
 
 	class Frequency:

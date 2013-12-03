@@ -178,7 +178,8 @@ class Gateway:
 		manageOrderRequest.ManageOrderOperationEnum = request.operationEnum.Capture
 
 		result = client.service.ManageOrder(manageOrderRequest)
-		print result
+		
+		return result
 
 	def QueryOrder(self,request):
 		"""Calls the QueryOrder method
@@ -197,6 +198,8 @@ class Gateway:
 		queryOrderRequest.RequestKey = request.requestKey
 
 		result = client.service.QueryOrder(queryOrderRequest)
+
+		return result
 
 	def CreateOrder(self,request):
 		"""Calls the CreateOrder method
@@ -237,3 +240,5 @@ class Gateway:
 			createOrderRequest.BoletoTransactionCollection = None
 
 		result = client.service.CreateOrder(createOrderRequest)
+
+		return result

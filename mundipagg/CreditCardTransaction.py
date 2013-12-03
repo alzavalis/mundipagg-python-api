@@ -1,47 +1,47 @@
 class CreditCardTransaction:
 	"""Class that hold Credit Card Transaction information"""
 
-	# Transaction amount in cents [Long]
+	#: Transaction amount in cents [Long]
 	amountInCents = None
 
-	# Card brand. Use the BrandEnum class [String]
+	#: Card brand. Use the BrandEnum class [String]
 	creditCardBrandEnum = None
 
-	# Credit card number [String]
+	#: Credit card number [String]
 	creditCardNumber = None
 
-	# Type of operation. User OperationEnum class [String]
+	#: Type of operation. User OperationEnum class [String]
 	creditCardOperationEnum = None
 
-	# Credit card expiration month [Integer]
+	#: Credit card expiration month [Integer]
 	expirationMonth = None
 
-	# Credit card expiration year [Integer]
+	#: Credit card expiration year [Integer]
 	expirationYear = None
 
-	# Name in the credit card [String]
+	#: Name in the credit card [String]
 	holderName = None
 
-	# Transaction installments count [Integer]
+	#: Transaction installments count [Integer]
 	installmentCount = None
 
-	# Card security code [Integer]
+	#: Card security code [Integer]
 	securityCode = None
 
-	# Code to select the payment method. Can be Cielo, Redecard and others [Integer]
+	#: Code to select the payment method. Can be Cielo, Redecard and others [Integer]
 	paymentMethodCode = None
 
-	# Custom transaction identifier [String]
+	#: Custom transaction identifier [String]
 	transactionReference = None
 
-	# Fill this property when creating a recurrency transaction. 
-	# [Recurrency] Transaction recurrency information.
+	#: Fill this property when creating a recurrency transaction. 
+	#: [Recurrency] Transaction recurrency information.
 	recurrency = None
 
-	# Brand enum
+	#: Brand enum
 	brandEnum = None
 
-	# Operation enum
+	#: Operation enum
 	operationEnum = None
 
 	class BrandEnum:
