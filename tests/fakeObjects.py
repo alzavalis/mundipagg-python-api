@@ -97,7 +97,7 @@ def newCreateOrderRequest():
 	createOrderRequest.amountInCents = 10
 	createOrderRequest.amountInCentsToConsiderPaid = 0	
 	createOrderRequest.buyer = newBuyer()
-	createOrderRequest.merchantKey = '8A2DD57F-1ED9-4153-B4CE-69683EFADAD5'
+	createOrderRequest.merchantKey = '00000000-0000-0000-0000-000000000000'
 	createOrderRequest.orderReference = 'Order 42'
 	createOrderRequest.creditCardTransactionCollection.append(newCreditCardTransaction())
 	createOrderRequest.emailUpdateToBuyerEnum = 'No'
