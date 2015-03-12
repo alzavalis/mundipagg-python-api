@@ -5,10 +5,10 @@ import logging
 class Gateway:
 	"""Class responsable for comunicating with the service via SOAP"""
 
-	def __init__(self,environment="test"):		
-		self.WEBSERVICE_TEST_URL = "https://transaction.mundipaggone.com/MundiPaggService.svc?wsdl"    
+	def __init__(self,environment="test"):
+		self.WEBSERVICE_TEST_URL = "https://transaction.mundipaggone.com/MundiPaggService.svc?wsdl"
 		self.WEBSERVICE_PRODUCTION_URL = "https://transaction.mundipaggone.com/MundiPaggService.svc?wsdl"
-		self.environment = environment 
+		self.environment = environment
 
 		logging.basicConfig(level=logging.INFO)
 		logging.getLogger('suds.client').setLevel(logging.DEBUG)
@@ -16,10 +16,10 @@ class Gateway:
 
 	def getUrl(self):
 		"""Decides with URL to use based in the environment value
-	    
+
 	    :returns: URL string
 	    """
-		url = None	
+		url = None
 
 		if self.environment == "production":
 			url = self.WEBSERVICE_PRODUCTION_URL
@@ -32,7 +32,7 @@ class Gateway:
 		"""This method creates an CreateBuyer object
 
 	    :param request: A CreateOrderRequest
-	    :returns: Buyer object    
+	    :returns: Buyer object
 	    """
 		url = self.getUrl()
 
@@ -55,7 +55,7 @@ class Gateway:
 			buyerAddress.Street = address.street
 			buyerAddress.ZipCode = address.zipCode
 
-			addressCollection.append(buyerAddress)			
+			addressCollection.append(buyerAddress)
 
 		buyer.BuyerKey = request.buyer.buyerKey
 		buyer.BuyerReference = request.buyer.buyerReference
@@ -79,7 +79,7 @@ class Gateway:
 
 	    :param request: A CreateOrderRequest
 	    :type request: CreateOrderRequest
-	    :returns: BoletoTransaction object    
+	    :returns: BoletoTransaction object
 	    """
 		url = self.getUrl()
 
@@ -99,16 +99,16 @@ class Gateway:
 
 			transactionCollection.append(boletoTransactionRequest)
 
-		return boletoTransactionRequest	
+		return boletoTransactionRequest
 
 
-	
+
 	def CreateCreditCardTransaction(self,request):
 		"""This method creates an CreateCreditCardTransaction object
 
 	    :param request: A CreateOrderRequest
 	    :type request: CreateOrderRequest
-	    :returns: CreateCreditCardTransaction object    
+	    :returns: CreateCreditCardTransaction object
 	    """
 
 		url = self.getUrl()
@@ -117,19 +117,21 @@ class Gateway:
 
 	 	transactionCollection = []
 
+	 	creditCardTransactionCollection = client.factory.create('ns0:ArrayOfCreditCardTransaction')
+
 	 	creditCardTransaction = client.factory.create('ns0:CreditCardTransaction')
 
 	 	for transaction in request.creditCardTransactionCollection:
-	 		creditCardTransaction.AmountInCents = transaction.amountInCents	 		
+	 		creditCardTransaction.AmountInCents = transaction.amountInCents
 	 		creditCardTransaction.CreditCardBrandEnum = transaction.creditCardBrandEnum
 	 		creditCardTransaction.CreditCardNumber = transaction.creditCardNumber
 	 		creditCardTransaction.CreditCardOperationEnum = transaction.creditCardOperationEnum
 	 		creditCardTransaction.ExpMonth = transaction.expirationMonth
 	 		creditCardTransaction.ExpYear = transaction.expirationYear
-	 		creditCardTransaction.HolderName = transaction.holderName	 		
+	 		creditCardTransaction.HolderName = transaction.holderName
 	 		creditCardTransaction.InstallmentCount = transaction.installmentCount
 	 		creditCardTransaction.PaymentMethodCode = transaction.paymentMethodCode
-	 		creditCardTransaction.SecurityCode = transaction.securityCode	 		
+	 		creditCardTransaction.SecurityCode = transaction.securityCode
 	 		creditCardTransaction.TransactionReference = transaction.transactionReference
 
 	 		if transaction.recurrency is not None:
@@ -141,32 +143,34 @@ class Gateway:
 
 	 		transactionCollection.append(creditCardTransaction)
 
-	 	return transactionCollection
+	 	creditCardTransactionCollection.CreditCardTransaction = transactionCollection
+
+	 	return creditCardTransactionCollection
 
 
 	def ManageOrder(self,request):
 		"""Calls the ManageOrder method
 
-		:param request: An CreateOrderRequest		
+		:param request: An CreateOrderRequest
 		"""
 		url = self.getUrl()
 
-		client = Client(url)		
+		client = Client(url)
 
 		ManageCreditCardTransactionRequest = []
 
 		manageOrderRequest = client.factory.create('ns0:ManageOrderRequest')
 		arrayOfManageCreditCardTransactionRequest = client.factory.create('ns0:ArrayOfManageCreditCardTransactionRequest')
-				
+
 		if request.transactionCollection is None and request.transactionCollection.count > 0 :
 
 			for transaction in request.transactionCollection:
 					ManageCreditCardTransactionRequest.append({
-						 'AmountInCents' : transaction.amountInCents, 
+						 'AmountInCents' : transaction.amountInCents,
 						 'TransactionKey' : transaction.transactionKey,
-	 					 'TransactionReference' : transaction.transactionReference 
+	 					 'TransactionReference' : transaction.transactionReference
 					})
-		
+
 		manageOrderRequest.MerchantKey = request.merchantKey
 		manageOrderRequest.OrderKey = request.orderKey
 		manageOrderRequest.OrderReference = request.orderReference
@@ -178,13 +182,13 @@ class Gateway:
 		manageOrderRequest.ManageOrderOperationEnum = request.operationEnum.Capture
 
 		result = client.service.ManageOrder(manageOrderRequest)
-		
+
 		return result
 
 	def QueryOrder(self,request):
 		"""Calls the QueryOrder method
 
-	    :param request: A QueryOrderRequest	    
+	    :param request: A QueryOrderRequest
 	    """
 		url = self.getUrl()
 
@@ -204,7 +208,7 @@ class Gateway:
 	def CreateOrder(self,request):
 		"""Calls the CreateOrder method
 
-	    :param request: A CreateOrderRequest    
+	    :param request: A CreateOrderRequest
 	    """
 		url = self.getUrl()
 

@@ -1,6 +1,6 @@
 import sys
 import uuid
-sys.path.append('C:\\Users\\agaldino\\Documents\\mundipagg-python-api')
+sys.path.append('C:\\Users\\mundipagg\\Documents\\GitHub\\mundipagg-python-api')
 
 from mundipagg import BoletoTransaction
 from mundipagg import Buyer
@@ -19,7 +19,7 @@ def newBoletoTransaction():
 	boletoTransaction = BoletoTransaction.BoletoTransaction()
 
 	boletoTransaction.amountInCents = 10
-	boletoTransaction.bankNumber = 314	
+	boletoTransaction.bankNumber = 314
 	boletoTransaction.nossoNumero = 321654
 	boletoTransaction.instructions = None
 
@@ -31,7 +31,7 @@ def newBuyerAddress():
 	:returns: BuyerAddress object
 	"""
 	buyerAddress = BuyerAddress.BuyerAddress()
-	
+
 	buyerAddress.city = 'Rio de Janeiro'
 	buyerAddress.complement = '01'
 	buyerAddress.number = '08'
@@ -52,12 +52,12 @@ def newBuyer():
 	buyer = Buyer.Buyer()
 
 	buyer.buyerReference = '1'
-	buyer.email = 'marvin@universe.com'	
+	buyer.email = 'marvin@universe.com'
 	buyer.homePhone = '+55(021)12345678'
 	buyer.ipAddress = '127.0.0.1'
 	buyer.mobilePhone = '+55(021)12345678'
 	buyer.workPhone = '+55(021)12345678'
-	buyer.name = 'Marvin'		
+	buyer.name = 'Marvin'
 	buyer.taxDocumentNumber = '00000000000'
 	buyer.addressCollection.append(newBuyerAddress())
 
@@ -72,17 +72,17 @@ def newCreditCardTransaction():
 	creditCardTransaction = CreditCardTransaction.CreditCardTransaction()
 
 	creditCardTransaction.amountInCents = 10
-	creditCardTransaction.creditCardBrandEnum = creditCardTransaction.brandEnum.MasterCard
+	creditCardTransaction.creditCardBrandEnum = creditCardTransaction.brandEnum.Visa
 	creditCardTransaction.creditCardNumber = '3214654498773211'
 	creditCardTransaction.creditCardOperationEnum = creditCardTransaction.operationEnum.AuthOnly
 	creditCardTransaction.expirationMonth = 12
-	creditCardTransaction.expirationYear = 2014
+	creditCardTransaction.expirationYear = 2018
 	creditCardTransaction.holderName = 'Marvin the Android Paranoid'
 	creditCardTransaction.installmentCount = 1
 	creditCardTransaction.securityCode = 456
 	creditCardTransaction.paymentMethodCode = 1
 	creditCardTransaction.transactionReference = 'transactionReference'
-	
+
 
 	return creditCardTransaction
 
@@ -95,7 +95,7 @@ def newCreateOrderRequest():
 	createOrderRequest = CreateOrderRequest.CreateOrderRequest()
 
 	createOrderRequest.amountInCents = 10
-	createOrderRequest.amountInCentsToConsiderPaid = 0	
+	createOrderRequest.amountInCentsToConsiderPaid = 0
 	createOrderRequest.buyer = newBuyer()
 	createOrderRequest.merchantKey = '00000000-0000-0000-0000-000000000000'
 	createOrderRequest.orderReference = 'Order 42'
@@ -112,7 +112,7 @@ def newQueryOrderRequest():
 	"""
 	queryOrderRequest = QueryOrderRequest.QueryOrderRequest()
 
-	queryOrderRequest.merchantKey = '8A2DD57F-1ED9-4153-B4CE-69683EFADAD5'
+	queryOrderRequest.merchantKey = '00000000-0000-0000-0000-000000000000'
 	queryOrderRequest.orderKey = uuid.uuid1()
 	queryOrderRequest.orderReference = 'Order 42'
 	queryOrderRequest.requestKey = uuid.uuid1()
@@ -129,7 +129,7 @@ def newManageOrder():
 	orderRequest.transactionCollection.append(createOrderRequest.creditCardTransactionCollection)
 	orderRequest.transactionCollection.append(createOrderRequest.boletoTransactionCollection)
 	orderRequest.manageOrderOperationEnum = orderRequest.operationEnum.Capture
-	orderRequest.merchantKey = createOrderRequest.merchantKey	
+	orderRequest.merchantKey = createOrderRequest.merchantKey
 	orderRequest.orderKey = uuid.uuid1()
 	orderRequest.orderReference	= createOrderRequest.orderReference
 	orderRequest.requestKey	= None
