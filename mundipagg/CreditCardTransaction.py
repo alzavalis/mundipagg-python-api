@@ -34,7 +34,7 @@ class CreditCardTransaction:
 	#: Custom transaction identifier [String]
 	transactionReference = None
 
-	#: Fill this property when creating a recurrency transaction. 
+	#: Fill this property when creating a recurrency transaction.
 	#: [Recurrency] Transaction recurrency information.
 	recurrency = None
 
@@ -47,7 +47,7 @@ class CreditCardTransaction:
 	class BrandEnum:
 		"""Credit card brand enum"""
 		Visa = 'Visa'
-		MasterCard = 'MasterCard'
+		Mastercard = 'Mastercard'
 		AmericanExpress = 'Amex'
 		Hipercard = 'Hipercard'
 		Diners = 'Diners'
@@ -59,10 +59,10 @@ class CreditCardTransaction:
 		"""Operation type enum"""
 		AuthOnly = 'AuthOnly'
 		AuthAndCapture = 'AuthAndCapture'
-		AuthAndCaptureDelay = 'AuthAndCaptureDelay'	
+		AuthAndCaptureDelay = 'AuthAndCaptureDelay'
 
 
 	def __init__(self):
-		self.brandEnum = self.BrandEnum	
+		self.brandEnum = self.BrandEnum
 		self.operationEnum = self.OperationEnum
-		
+

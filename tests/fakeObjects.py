@@ -72,7 +72,7 @@ def newCreditCardTransaction():
 	creditCardTransaction = CreditCardTransaction.CreditCardTransaction()
 
 	creditCardTransaction.amountInCents = 10
-	creditCardTransaction.creditCardBrandEnum = creditCardTransaction.brandEnum.Visa
+	creditCardTransaction.creditCardBrandEnum = creditCardTransaction.brandEnum.Mastercard
 	creditCardTransaction.creditCardNumber = '3214654498773211'
 	creditCardTransaction.creditCardOperationEnum = creditCardTransaction.operationEnum.AuthOnly
 	creditCardTransaction.expirationMonth = 12
@@ -98,7 +98,7 @@ def newCreateOrderRequest():
 	createOrderRequest.amountInCentsToConsiderPaid = 0
 	createOrderRequest.buyer = newBuyer()
 	createOrderRequest.merchantKey = '00000000-0000-0000-0000-000000000000'
-	createOrderRequest.orderReference = 'Order 42'
+	createOrderRequest.orderReference = 'Order1'
 	createOrderRequest.creditCardTransactionCollection.append(newCreditCardTransaction())
 	createOrderRequest.emailUpdateToBuyerEnum = 'No'
 	#createOrderRequest.boletoTransactionCollection.append(newBoletoTransaction())
@@ -114,7 +114,7 @@ def newQueryOrderRequest():
 
 	queryOrderRequest.merchantKey = '00000000-0000-0000-0000-000000000000'
 	queryOrderRequest.orderKey = uuid.uuid1()
-	queryOrderRequest.orderReference = 'Order 42'
+	queryOrderRequest.orderReference = 'Order1'
 	queryOrderRequest.requestKey = uuid.uuid1()
 
 
