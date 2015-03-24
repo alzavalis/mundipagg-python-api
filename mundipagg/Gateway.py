@@ -87,6 +87,9 @@ class Gateway:
 
 		transactionCollection = []
 
+		boletoTransactionCollection = client.factory.create(
+			'ns0:ArrayOfBoletoTransaction')
+
 		boletoTransactionRequest = client.factory.create('ns0:BoletoTransaction')
 
 		for boleto in request.boletoTransactionCollection:
@@ -99,7 +102,9 @@ class Gateway:
 
 			transactionCollection.append(boletoTransactionRequest)
 
-		return boletoTransactionRequest
+		boletoTransactionCollection.BoletoTransaction = transactionCollection
+
+		return boletoTransactionCollection
 
 
 
